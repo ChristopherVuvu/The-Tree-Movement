@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import ReactDOM from 'react';
 
 const myElement = <Salamu greeting = "Hello"/>;
 const employee = {
@@ -53,5 +54,5 @@ function App() {
   );
 }
 
-document.getElementById('root')
+ReactDOM.render(<App />, (document.getElementById('root'));
 export default App;
