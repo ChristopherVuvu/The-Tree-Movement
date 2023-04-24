@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 
 const myElement = <Salamu greeting = "Hello"/>;
 const employee = {
