@@ -1,59 +1,56 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import logo from './logo.svg';
+import './App.css';
 
-function TreeButton(props) {
-  console.log(props)
-  return (
-    <button>
-      <span role="img">{props.tree}</span>
-      {props.labelText}
-    </button>
-  )
+const myElement = <Salamu greeting = "Hello"/>;
+const employee = {
+  name: "John Paul",
+  address: "Nairobi -Kenya",
+  residence: "Along Msa road"
 }
 
-function Header() {
-  return (
-    <header>
-      <h1>Greening Africa</h1>
-      <nav>
-        <TreeButton type ="button" tree="tree" labelText="Enter Details" />
-      </nav>
-    </header>
+function Salamu(props){
+  return(
+    <h2>I am saying {props.greeting}</h2>
   )
 }
-
-function LandingPage() {
-  return (
-    <div>
-      <Header/>
-      <main>
-        <div className="card">
-          <h2>The Africa Tree Movement!</h2>
-          <em>Plant a tree to better the world!!</em>
-        </div>
-        <div className="card">
-          <h2>The tree of choice is here!</h2>
-          <div>
-            <TreeButton 
-            tree="data:image/jpeg;base64,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" 
-            labelText="Palm Tree" />
-            <TreeButton 
-            tree="https://www.istockphoto.com/photos/apple-tree" 
-            labelText="Apple Tree" />
-          </div>
-        </div>
-      </main>
+function NewDay(){
+  return(
+    <div className="elegance">
+      <Salamu greeting= "Hello"/>
     </div>
-  );
+  )
+}
+
+function EmployeeDetails(){
+  return (
+    <div className='div2'>
+    <p>{employee.name} stays {employee.residence}</p>
+    <p>The address for {employee.name} is {employee.address}</p>
+    </div>
+  )
+}
+
+function PalmPhoto(){
+  return (
+    <>
+    <img 
+    src= "data:image/jpeg;base64,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"
+    alt ="Picture"
+    />
+    <p>Palm Tree on a windy day!</p>
+    </>
+  )
 }
 
 function App() {
   return (
-    <div>
-      <Header/>
-      <LandingPage />
-    </div>
+    <div className ="App">
+      <NewDay/>
+      <EmployeeDetails />
+      <PalmPhoto />
+  </div>
   );
 }
 
-export default App
+document.getElementById('root')
+export default App;
